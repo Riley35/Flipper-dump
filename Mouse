@@ -1,0 +1,9 @@
+REM Move the mouse cursor randomly
+:start
+DELAY 500
+MOUSE 500 500
+DELAY 1000
+MOUSE 1000 1000
+DELAY 1000
+STRING goto start
+ENTER
