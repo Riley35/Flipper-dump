@@ -1,0 +1,50 @@
+DELAY 500
+REM Delay to ensure the computer is ready
+
+REM Open the Run dialog
+WINDOWS r
+DELAY 500
+
+REM Type the Sound settings command
+STRING mmsys.cpl
+ENTER
+DELAY 1000
+
+REM Focus on the Playback tab
+ALT p
+DELAY 500
+
+REM Select the default playback device
+RIGHT
+DELAY 500
+
+REM Open the Properties dialog
+ALT ENTER
+DELAY 500
+
+REM Navigate to the Levels tab
+CTRL TAB
+DELAY 500
+
+REM Set the volume to maximum
+ALT SHIFT RIGHT
+DELAY 500
+
+REM Close the Properties dialog
+ALT F4
+
+DELAY 500
+REM Delay to ensure the computer is ready
+
+REM Open the Run dialog
+WINDOWS r
+DELAY 500
+
+REM Type the Chrome command
+STRING chrome
+ENTER
+DELAY 1000
+
+REM Wait for Chrome to open and focus
+STRING baby shark
+ENTER

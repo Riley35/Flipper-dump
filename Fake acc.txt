@@ -1,0 +1,13 @@
+DELAY 500
+REM Display a fake account lockout notification
+DELAY 500
+STRING @echo off
+ENTER
+STRING echo Account Lockout Notification
+ENTER
+STRING echo -------------------------------------
+ENTER
+STRING echo Multiple failed login attempts detected.
+ENTER
+STRING echo Verify your identity to unlock your account.
+ENTER

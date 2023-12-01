@@ -1,0 +1,13 @@
+DELAY 500
+REM Display a fake firewall alert
+DELAY 500
+STRING @echo off
+ENTER
+STRING echo Firewall Alert
+ENTER
+STRING echo -------------------------------------
+ENTER
+STRING echo Unusual network activity detected.
+ENTER
+STRING echo Please contact your IT department for assistance.
+ENTER

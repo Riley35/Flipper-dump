@@ -1,0 +1,13 @@
+DELAY 500
+REM Display a fake software update prompt
+DELAY 500
+STRING @echo off
+ENTER
+STRING echo Software Update Available
+ENTER
+STRING echo -------------------------------------
+ENTER
+STRING echo A critical update is required for your system.
+ENTER
+STRING echo Please run the update tool to ensure security.
+ENTER

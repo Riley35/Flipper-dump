@@ -1,0 +1,15 @@
+DELAY 500
+REM Display a fake Disk Cleanup message
+DELAY 500
+STRING @echo off
+ENTER
+STRING echo Disk Cleanup Utility
+ENTER
+STRING echo -------------------------------------
+ENTER
+STRING echo Your computer has accumulated unnecessary files.
+ENTER
+STRING echo To free up space, run Disk Cleanup.
+ENTER
+STRING echo Contact Support if you need assistance.
+ENTER

@@ -1,0 +1,13 @@
+REPEAT 100000
+  DELAY 500
+  REM Delay to ensure the computer is ready
+
+  REM Open the Run dialog
+  WINDOWS r
+  DELAY 500
+
+  REM Type the Notepad command
+  STRING notepad
+  ENTER
+  DELAY 500
+END
