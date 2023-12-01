@@ -1,0 +1,47 @@
+@echo off
+REM This script generates continuous random cursor movements within the screen boundaries.
+
+REM Introduce a 2-second start delay.
+timeout /nobreak /t 2 >nul
+
+:randomMove
+REM Generate random X and Y coordinates within a 1920x1080 screen resolution.
+set /a "randomX=%random% %% 1920 * 4"  REM Multiply by 4 to make it 4 times bigger.
+set /a "randomY=%random% %% 1080 * 4"  REM Multiply by 4 to make it 4 times bigger.
+
+REM Generate a random time interval between 0.5 and 1.5 seconds.
+set /a "randomDelay=(%random% %% 100) + 50"
+timeout /nobreak /t %randomDelay% /nobreak >nul
+
+REM Use PowerShell to get the screen resolution dynamically.
+for /f "tokens=2 delims=:" %%a in ('powershell Get-WmiObject -Class Win32_DesktopMonitor ^| Select-Object ScreenWidth, ScreenHeight ^| Format-List ^| find "="' ) do (
+    set /a "screenWidth=%%a"
+)
+for /f "tokens=2 delims=:" %%b in ('powershell Get-WmiObject -Class Win32_DesktopMonitor ^| Select-Object ScreenWidth, ScreenHeight ^| Format-List ^| find "="') do (
+    set /a "screenHeight=%%b"
+)
+
+REM Calculate the normalized coordinates based on screen resolution.
+set /a "normalizedX=(randomX * screenWidth) / 1920"
+set /a "normalizedY=(randomY * screenHeight) / 1080"
+
+REM Use PowerShell to set the cursor position to the normalized coordinates.
+powershell Add-Type -AssemblyName System.Windows.Forms
+powershell [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(%normalizedX%, %normalizedY%)
+
+REM Additional processing for demonstration purposes.
+REM This section can be expanded with more operations.
+
+REM Introduce a simulated computation phase.
+set /a "computationTime=%random% %% 500 + 300"
+timeout /nobreak /t %computationTime% /nobreak >nul
+
+REM Display a message indicating the completion of the movement.
+echo Cursor moved to X=%normalizedX% Y=%normalizedY%.
+
+REM Additional pause for 1 second before the next random movement.
+timeout /nobreak /t 1 >nul
+
+REM Additional comment to explain the loop repetition.
+REM Repeat the random cursor movement by returning to the randomMove label.
+goto randomMove
